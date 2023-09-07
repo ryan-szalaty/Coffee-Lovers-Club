@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<section class="main">
+    <h1>ABOUT PAGE</h1>
+
+    <form action="/mail" method="POST">
+        <input id="email" name="email" placeholder="Enter your email" autofocus="on" autocomplete="off" type="text" required>
+        <input type="submit">
+    </form>
+</section>
+
+{% endblock %}
