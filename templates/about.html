@@ -1,14 +1,26 @@
-{% extends "layout.html" %}
-
-{% block body %}
+{% extends "layout.html" %} {% block body %}
 
 <section class="main">
-    <h1>ABOUT PAGE</h1>
+  <h1>ABOUT PAGE</h1>
+  {% with flash_message = session.pop('flash_message', None) %} {% if
+    flash_message %}
+    <div class="alert">
+      <h2>{{ flash_message['message'] }}</h2>
+    </div>
+    {% endif %} {% endwith %}
 
-    <form action="/mail" method="POST">
-        <input id="email" name="email" placeholder="Enter your email" autofocus="on" autocomplete="off" type="text" required>
-        <input type="submit">
-    </form>
+  <form action="/mail" method="POST">
+    <input
+      id="email"
+      name="email"
+      placeholder="Enter your email"
+      autofocus="on"
+      autocomplete="off"
+      type="text"
+      required
+    />
+    <input type="submit" />
+  </form>
 </section>
 
 {% endblock %}
