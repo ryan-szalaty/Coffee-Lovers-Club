@@ -2,6 +2,7 @@ body {
     margin: 0;
     width: auto;
     height: auto;
+    font-size: 1.2rem;
 }
 
 .navbar {
@@ -15,12 +16,10 @@ body {
 }
 
 .navbar-left a {
-    font-size: 1.2rem;
     margin-left: 10px;
 }
 
 .navbar-right a {
-    font-size: 1.2rem;
     margin-left: 10px;
     margin-right: 10px;
 }
@@ -33,4 +32,24 @@ body {
 .success {
     font-size: 1.3rem;
     color: green;
+}
+
+.main {
+    margin: 5%;
+}
+
+.banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+.title-text {
+    font-size: 1.5rem;
 }
