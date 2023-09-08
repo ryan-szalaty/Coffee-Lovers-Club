@@ -58,4 +58,18 @@ a {
 
 .title-text {
     font-size: 1.5rem;
+    font-style: italic;
+}
+
+.coffee-recipe {
+    padding: 2%;
+}
+
+.coffee-title {
+    font-size: 1.4rem;
+    font-style: italic;
+}
+
+.coffee-recipe:nth-child(even) {
+    background-color: rgb(105, 72, 0);
 }
