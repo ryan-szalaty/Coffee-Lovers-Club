@@ -1,36 +1,40 @@
 {% extends "layout.html" %} {% block body %}
 
-<section class="main">
-  {% with flash_message = session.pop('flash_message', None) %} {% if
-  flash_message %}
-  <div class="success">
-    <h2>{{ flash_message['message'] }}</h2>
-  </div>
-  {% endif %} {% endwith %}
+<section>
+  <div class="main">
+    {% with flash_message = session.pop('flash_message', None) %} {% if
+    flash_message %}
+    <div class="success">
+      <h2>{{ flash_message['message'] }}</h2>
+    </div>
+    {% endif %} {% endwith %}
 
-  <div class="banner">
-    <p class="title">Welcome to Coffee Lover's Club</p>
-    <p class="title-text">"Worry not about the coffee, but be wary of the coughee: he who is coughed upon." - Ryan
-      Szalaty</p>
+    <div class="banner">
+      <p class="title">Welcome to Coffee Lover's Club</p>
+      <p class="title-text">"Worry not about the coffee, but be wary of the coughee: he who is coughed upon." - Ryan
+        Szalaty</p>
+    </div>
+
+    <p>
+      Crisp autumn mornings complete with the brisk aroma of a dark roast coffee sitting idyllicly on your porch.
+      Sweet, creamy clouds atop an ice-cold frappacino before your first college class of the day.
+      Bold, yet swift burst of energy for those late nights you put in.
+    </p>
+    <p>
+      No matter where you are in the world, one thing brings us all together: coffee.
+    </p>
+    <p>
+      Perhaps you are brand new to coffee and would like to take your first step into this lovely world.
+      Or, perhaps you have been an avid consumer of coffee for as long as you can remember.
+      Anyone is welcome in the Coffee Lover's Club.
+    </p>
+    <p>
+      Have a minute? Pour yourself a cup and relax. Let's learn about some interesting coffee facts.
+    </p>
   </div>
 
-  <p>
-    Crisp autumn mornings complete with the brisk aroma of a dark roast coffee sitting idyllicly on your porch.
-    Sweet, creamy clouds atop an ice-cold frappacino before your first college class of the day.
-    Bold, yet swift burst of energy for those late nights you put in.
-  </p>
-  <p>
-    No matter where you are in the world, one thing brings us all together: coffee.
-  </p>
-  <p>
-    Perhaps you are brand new to coffee and would like to take your first step into this lovely world.
-    Or, perhaps you have been an avid consumer of coffee for as long as you can remember.
-    Anyone is welcome in the Coffee Lover's Club.
-  </p>
-  <p>
-    Have a minute? Pour yourself a cup and relax. Let's learn about some interesting coffee facts.
-  </p>
-  
+  <p class="title">Facts About Coffee</p>
+
   <div class="coffee-facts">
     <div class="coffee-fact">
       <p>
@@ -49,7 +53,6 @@
         people a headache.
       </p>
     </div>
-    <hr>
     <div class="coffee-fact">
       <p>
         Fact #2: Coffee was discovered by a goat.
@@ -66,7 +69,6 @@
         Be sure to thank a goat next time you see one. Just don't give it any coffee.
       </p>
     </div>
-    <hr>
     <div class="coffee-fact">
       <p>
         Fact #3: College was the same price as a cup of coffee back in the day.
@@ -82,41 +84,38 @@
         And the best part? No application, SATs or financial aid required.
       </p>
     </div>
+    <!--Might want to give every second element a different color.-->
+    <div class="coffee-fact">
+      <p>
+        Fact #4: Coffee helps you live longer.
+      </p>
+      <p>
+        Caffeine gets a bad rap for the benefits it can give you, namely that of increased energy and mental awareness.
+      </p>
+      <p>
+        More energy means being less prone to mistakes and accidents as a result of fatigue or too many late nights
+        playing Skyrim.
+      </p>
+      <p>
+        As with all things, take it in moderation. Except Skyrim. It deserves to be played for an unhealthy amount of
+        time.
+      </p>
+    </div>
+    <div class="coffee-fact">
+      <p>
+        Fact #5: Decaf is not completely caffeine-free.
+      </p>
+      <p>
+        There are a couple of ways to extract the caffeine from coffee beans while retaining the flavor compounds.
+      </p>
+      <p>
+        However, none of these methods can remove all traces of caffeine. About 3% always remains in your cup.
+      </p>
+      <p>
+        Remind someone of that fact they next time they look down on you through their "decaf".
+      </p>
+    </div>
   </div>
-  <!--Might want to give every second element a different color.-->
-  <hr>
-  <div class="coffee-fact">
-    <p>
-      Fact #4: Coffee helps you live longer.
-    </p>
-    <p>
-      Caffeine gets a bad rap for the benefits it can give you, namely that of increased energy and mental awareness.
-    </p>
-    <p>
-      More energy means being less prone to mistakes and accidents as a result of fatigue or too many late nights
-      playing Skyrim.
-    </p>
-    <p>
-      As with all things, take it in moderation. Except Skyrim. It deserves to be played for an unhealthy amount of
-      time.
-    </p>
-  </div>
-  <hr>
-  <div class="coffee-fact">
-    <p>
-      Fact #5: Decaf is not completely caffeine-free.
-    </p>
-    <p>
-      There are a couple of ways to extract the caffeine from coffee beans while retaining the flavor compounds.
-    </p>
-    <p>
-      However, none of these methods can remove all traces of caffeine. About 3% always remains in your cup.
-    </p>
-    <p>
-      Remind someone of that fact they next time they look down on you through their "decaf".
-    </p>
-  </div>
-  <hr>
   <div class="coffee-education">
     <p class="title">
       What's the difference between mild, medium and dark roasts?
@@ -146,7 +145,8 @@
     </div>
     <div class="coffee-education-dark">
       <p>
-        Dark coffee takes the cake for having the most intensive roasting process, and in turn, having carmelized sugars
+        Dark coffee takes the cake for having the most intensive roasting process, and in turn, having carmelized
+        sugars
         within the
         beans. This results in smoky or bitter undertone with a possible burnt taste. In addition, dark roast coffee
         usually has the
@@ -154,9 +154,9 @@
         flavors.
       </p>
     </div>
+    <p>Want to make some good coffee at home? Check out our guide to making the best cup of coffee <a
+      href="/coffee">here</a>.</p>
   </div>
-
-  <p>Want to make some good coffee at home? Check out our guide to making the best cup of coffee <a href="/coffee">here</a>.</p>
 
 </section>
 {% endblock %}
