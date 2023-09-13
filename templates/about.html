@@ -1,26 +1,52 @@
-{% extends "layout.html" %} {% block body %}
+<!DOCTYPE html>
+<html lang="en">
 
-<section class="main">
-  <h1>ABOUT PAGE</h1>
-  {% with flash_message = session.pop('flash_message', None) %} {% if
-    flash_message %}
-    <div class="alert">
-      <h2>{{ flash_message['message'] }}</h2>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../static/styles.css">
+  <title>Coffee Lover's Club</title>
+</head>
+
+<body>
+  <section class="about">
+    <div class="left">
+      <img src="../static/coffee-cup.jpg">
     </div>
-    {% endif %} {% endwith %}
+    <div class="right">
+      <p class="title">Get yourself a coffee on us.</p>
+      <p>Want to see more on here? Maybe you have an itch to learn more coffee facts?
+        Are you interested in seeing more recipes for the cold coffee lovers?
+        Would you like to speak with the mind behind Coffee Lover's Club?
+        Enter your name and email below and we'll get back to you. Thanks again
+        for being with us!
+      </p>
+      <p>You can head back home and gain more coffee wisdom at any time <a href="/">here</a>.</p>
+      <form action="/mail" method="POST">
+        <label for="name">First Name</label>
+        <input id="name" name="name" placeholder="Name" type="text" required />
+        <label for="email">Email</label>
+        <input id="email" name="email" placeholder="Enter your email" autofocus="on" autocomplete="off" type="text"
+          required />
+        <input class="button" type="submit" />
+        <p class="credit">Photo by <a
+            href="https://unsplash.com/@claybanks?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Clay
+            Banks</a> on <a
+            href="https://unsplash.com/photos/_wkd7XBRfU4?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+        </p>
+      </form>
+      {% with flash_message = session.pop('flash_message', None) %} {% if
+      flash_message %}
+      <div class="alert">
+        <p>{{ flash_message['message'] }}</p>
+      </div>
+      {% endif %} {% endwith %}
+    </div>
+  </section>
+  <footer>
+    <p>&copy;Coffee Lover's Club, 2023</p>
+  </footer>
+  <script src="../static/prod-min.js"></script>
+</body>
 
-  <form action="/mail" method="POST">
-    <input
-      id="email"
-      name="email"
-      placeholder="Enter your email"
-      autofocus="on"
-      autocomplete="off"
-      type="text"
-      required
-    />
-    <input type="submit" />
-  </form>
-</section>
-
-{% endblock %}
+</html>

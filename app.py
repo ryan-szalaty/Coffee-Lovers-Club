@@ -39,6 +39,7 @@ def coffee():
 @app.route("/mail", methods=["POST"])
 def send_mail():
     recipient_email = request.form["email"]
+    recipient_name = request.form["name"]
 
     msg = Message("Coffee Lover's Club: Thank You!", recipients=[recipient_email])
     msg.body = "Thank you for checking out Coffee Lover's Club! We are thrilled to have you!\n\nCoffee enthusiasts are similar no matter where they come from: They have a keen sense of refined taste and know what they want. Mild, medium, dark...there's something for everyone.\n\nCheck out the creator of Coffee Lover's Club at https://ryan-szalaty.github.io.\n\nHave a great day!"
@@ -46,7 +47,7 @@ def send_mail():
     try:
         mail.send(msg)
         session["flash_message"] = {
-            "message" : f"Email sent successfully! Please check your inbox at {recipient_email}.",
+            "message" : f"Email sent successfully! Please check your inbox, {recipient_name}.",
             "category" : "success"
         }
         return redirect("/")
