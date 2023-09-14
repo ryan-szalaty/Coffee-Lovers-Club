@@ -35,6 +35,10 @@ def about():
 def coffee():
     return render_template("/coffee.html")
 
+@app.route("/facts")
+def facts():
+    return render_template("/facts.html")
+
 #Sending Emails
 @app.route("/mail", methods=["POST"])
 def send_mail():
