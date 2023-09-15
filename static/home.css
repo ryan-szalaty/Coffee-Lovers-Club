@@ -10,6 +10,22 @@ body {
     text-shadow: 3px 3px 3px rgb(0, 7, 143), 3px 3px 3px rgb(40, 30, 0);
 }
 
+/*Overlay settings for mobile menu*/
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Adjust opacity here */
+    z-index: 1;
+}
+
+.overlay.show-overlay {
+    display: block;
+}
+
 /* Styling links */
 a {
     text-decoration: none;
@@ -39,6 +55,32 @@ a {
 .navbar-right a {
     margin-left: 10px;
     margin-right: 10px;
+}
+
+/* Hamburger menu styles */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-left: 5%;
+}
+
+.menu {
+    display: none;
+}
+
+.menu.show-menu {
+    display: flex;
+    z-index: 2;
+}
+
+.bar {
+    display: none;
+    width: 25px;
+    height: 3px;
+    background-color: rgb(255, 174, 0);
+    box-shadow: 3px 3px 3px rgb(0, 7, 143), 3px 3px 3px rgb(40, 30, 0);
+    margin: 3px 0;
 }
 
 /* Keyframes for slide down animation */
@@ -183,4 +225,48 @@ a {
     font-size: 1.5rem;
     font-style: italic;
     text-align: center;
+}
+
+/* Footer */
+footer {
+    padding: 2%;
+}
+
+/* Mobile Screen Settings */
+@media screen and (max-width: 768px) {
+    .navbar-right {
+        display: none;
+    }
+
+    .navbar-left {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .bar {
+        display: block;
+    }
+
+    .menu {
+        width: 30%;
+        max-width: 30%;
+        list-style: none;
+        padding: 0;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        position: absolute;
+        top: -5px;
+        left: 70px;
+    }
+
+    .menu li {
+        width: 100%;
+        padding: 5%;
+        margin-bottom: 2%;
+        text-align: center;
+    }
 }

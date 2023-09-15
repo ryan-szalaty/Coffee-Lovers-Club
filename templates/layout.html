@@ -8,6 +8,19 @@
 </head>
 <body>
     <nav class="navbar">
+        <!-- Hamburger -->
+        <div class="menu-toggle">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <!-- Responsive menu -->
+        <ul class="menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/coffee">Coffee</a></li>
+            <li><a href="/coffee">Facts</a></li>
+        </ul>
         <div class="navbar-left">
             <a href="/">Coffee Lover's Club</a>
         </div>
@@ -16,7 +29,11 @@
             <a href="/coffee">Coffee</a>
         </div>
     </nav>
+    <div class="overlay"></div>
     {% block body %}{% endblock %}
-    <script src="../static/prod-min.js"></script>
+    <footer>
+        <p>&COPY;Coffee Lover's Club 2023</p>
+    </footer>
+    <script src="../static/dev-coffee.js"></script>
 </body>
 </html>
