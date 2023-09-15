@@ -232,6 +232,100 @@ footer {
     padding: 2%;
 }
 
+/* Coffee page */
+.coffee-recipe {
+    padding: 5%;
+}
+
+.coffee-title {
+    font-size: 1.4rem;
+    font-style: italic;
+}
+
+.coffee-tips {
+    margin: 5%;
+}
+
+.coffee-recipe:nth-child(even) {
+    background-color: rgb(24, 17, 0);
+}
+
+.coffee-facts > .coffee-fact {
+    padding: 5%;
+}
+
+.coffee-facts > .coffee-fact:nth-child(odd) {
+    background-color: rgb(105, 72, 0);
+}
+
+.coffee-education {
+    margin: 5%;
+}
+
+.coffee-tips-espresso ul li {
+    list-style-type: circle;
+}
+
+.coffee-tips-froth ul li {
+    list-style-type: circle;
+}
+
+span {
+    font-weight: bolder;
+}
+
+.on {
+    display: block;
+}
+
+.off {
+    display: none;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+button {
+    background-color: rgb(99, 74, 0);
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    padding: 2%;
+    border-radius: 10%;
+    box-shadow: 5px 2px 2px 2px rgb(40, 30, 0);
+}
+
+.button {
+    background-color: rgb(99, 74, 0);
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    padding: 2%;
+    border-radius: 10%;
+    box-shadow: 5px 2px 2px 2px rgb(105, 72, 0);
+    margin-top: 5%;
+}
+
+button:hover {
+    background-color: rgb(99, 74, 0);
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: rgb(99, 74, 0);
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+button:active {
+    transform: translateY(2px);
+}
+
 /* Mobile Screen Settings */
 @media screen and (max-width: 768px) {
     .navbar-right {
@@ -268,5 +362,18 @@ footer {
         padding: 5%;
         margin-bottom: 2%;
         text-align: center;
+    }
+
+    .grid-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+    }
+
+    .grid-item {
+        border-left: 0;
+        border-right: 0;
     }
 }
