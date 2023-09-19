@@ -44,6 +44,7 @@ a {
     justify-content: space-between;
     align-items: center;
     font-size: 1.5rem;
+    border-bottom: 5px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Left-aligned links within the navbar */
@@ -139,8 +140,8 @@ a {
 
 /* Banner styles */
 .banner {
-    position: relative;
     width: 100%;
+    height: 100%;
     text-align: center;
 }
 
@@ -150,9 +151,9 @@ a {
     width: 100%;
     max-width: 100%;
     height: 100%;
-    max-height: 90vh;
+    border-left: none;
+    border-right: none;
     border-bottom: 5px solid rgba(255, 255, 255, 0.2);
-    border-top: 5px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Banner title styles */
@@ -192,7 +193,7 @@ a {
     font-weight: 600;
 }
 
-.grid-item-link, #frothing, #espresso {
+.grid-item-link, #frothing, #espresso, #form-button {
     font-size: 1.5rem;
     padding: 10px 20px;
     border: none; 
@@ -202,6 +203,7 @@ a {
     cursor: pointer; 
     transition: background-color 0.3s ease, transform 0.2s ease;
     text-shadow: none;
+    margin-top: 20px;
 }
 
 .grid-item-link:hover {
@@ -232,6 +234,9 @@ a {
 /* Footer */
 footer {
     padding: 2%;
+}
+.credit {
+    font-size: 0.8rem;
 }
 
 /* Coffee page */
@@ -328,8 +333,64 @@ button:active {
     transform: translateY(2px);
 }
 
+/*Form Page*/
+.about {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    height: 100%;
+    width: auto;
+}
+
+.left, .right {
+    flex: 1;
+    max-height: 100%;
+    border-bottom: 5px solid rgba(255, 255, 255, 0.2);
+}
+
+.left {
+    border-right: solid 5px rgba(255, 255, 255, 0.2);
+}
+
+.form-image {
+    width: 100%;
+    height: 100%;
+}
+
+.right p {
+    margin: 5%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    width: auto;
+    font-size: 1.5rem;
+    padding: 5%;
+}
+
+form input {
+    margin: 1%;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
 /* Mobile Screen Settings */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 800px) {
+    .about {
+        flex-direction: column;
+    }
+
+    .left, .right {
+        width: 100%;
+        height: 100%;
+    }
+
     .navbar-right {
         display: none;
     }
@@ -390,5 +451,14 @@ button:active {
     .grid-item {
         border-left: 0;
         border-right: 0;
+    }
+
+    .left {
+        border-right: none;
+        border-bottom: none;
+    }
+
+    .form-image {
+        border-bottom: solid 5px rgba(255, 255, 255, 0.2);
     }
 }

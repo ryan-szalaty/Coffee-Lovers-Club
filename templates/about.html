@@ -1,7 +1,7 @@
 {% extends "layout.html" %} {% block body %}
 <section class="about">
   <div class="left">
-    <img src="../static/coffee-cup.jpg">
+    <img class="form-image" src="../static/coffee-cup.jpg" alt="coffee-cup">
   </div>
   <div class="right">
     <p class="title">Get yourself a coffee on us.</p>
@@ -11,19 +11,13 @@
       Enter your name and email below and we'll get back to you. Thanks again
       for being with us!
     </p>
-    <p>You can head back home and gain more coffee wisdom at any time <a href="/">here</a>.</p>
     <form action="/mail" method="POST">
       <label for="name">First Name</label>
       <input id="name" name="name" placeholder="Name" type="text" required />
       <label for="email">Email</label>
       <input id="email" name="email" placeholder="Enter your email" autofocus="on" autocomplete="off" type="text"
         required />
-      <input class="button" type="submit" />
-      <p class="credit">Photo by <a
-          href="https://unsplash.com/@claybanks?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Clay
-          Banks</a> on <a
-          href="https://unsplash.com/photos/_wkd7XBRfU4?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-      </p>
+      <input id="form-button" type="submit" />
     </form>
     {% with flash_message = session.pop('flash_message', None) %} {% if
     flash_message %}
@@ -33,5 +27,4 @@
     {% endif %} {% endwith %}
   </div>
 </section>
-<script src="../static/prod-min.js"></script>
 {% endblock %}
